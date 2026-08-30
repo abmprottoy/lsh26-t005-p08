@@ -1,0 +1,69 @@
+{
+  "team_id": "LSH26-T005",
+  "problem_id": "P08",
+  "repository_name": "lsh26-t005-p08",
+  "live_url": "https://lsh26-t005-p08.abmlabs.workers.dev",
+  "demo_video_url_optional": "",
+  "event_start_code": "LSH26-8490-C900",
+  "repository_created_before_release": false,
+  "pre_event_materials": [],
+  "sample_data": {
+    "loads_published_fixture": true,
+    "method": "Bundled fixture selector and JSON file upload",
+    "reset_instructions": "Choose Restore built-in sample to restore all 25 published cases and process PUB-01."
+  },
+  "problem_solving_method": "We converted the P08 statement and published clarifications into executable boundary tests, isolated a pure TypeScript grading engine from the Worker and React layers, validated fixture input with Zod, and rendered the engine's trace and checking-list output directly so the UI cannot silently reimplement the rules.",
+  "requirements": {
+    "R1": {
+      "status": "complete",
+      "evidence": "public/P08_school_results_public.json; automatic PUB-01 load; case selector; Upload JSON action; src/domain/schema.ts"
+    },
+    "R2": {
+      "status": "complete",
+      "evidence": "Results tab; src/domain/grade-band.ts; src/domain/evaluate-subject.ts; src/domain/evaluate-student.ts; 32 automated tests"
+    },
+    "R3": {
+      "status": "complete",
+      "evidence": "Results > Inspect; src/client/components/StudentTraceDialog.tsx; PUB-01/S004 visibly shows 4.67 uncancelled GPA and MAT failure override to 0.00/F"
+    },
+    "R4": {
+      "status": "complete",
+      "evidence": "Checking lists tab; src/domain/checking-lists.ts; optional GP <= 2, practical < 8 and AB lists allow overlap"
+    }
+  },
+  "team_members": [
+    {
+      "registered_name": "Ammar Bin Mahmud",
+      "github_username": "abmprottoy",
+      "major_contribution": "Team lead; problem analysis, implementation direction, AI Integration and verification, UI Direction and implementation.",
+      "evidence_paths_or_commits": [
+        "EVENT.md",
+        "src/domain",
+        "src/worker",
+        "src/client"
+      ]
+    }
+  ],
+  "major_design_decisions": [
+    "Keep grading logic in a pure TypeScript functional core with no React, Hono, D1 or Cloudflare dependencies.",
+    "Return real-number rule explanations from the domain engine and render them directly in the calculation trace.",
+    "Preserve AB as a distinct state from numeric zero.",
+    "Use the published clarification's three independent checking-list criteria.",
+    "Deploy React static assets and the Hono API together as one Cloudflare Worker.",
+    "Use D1 only for reproducible source/result run snapshots rather than a normalized school CRUD model."
+  ],
+  "known_limitations": [
+    "The registered-member list must be checked against the official roster before submission.",
+    "The printable individual marksheet bonus is not implemented.",
+    "Invalid uploads are explained but corrected outside the application and uploaded again."
+  ],
+  "ai_tools_used": [
+    {
+      "tool": "OpenAI Codex",
+      "used_for": "Specification extraction, architecture, implementation, automated tests, UI construction, documentation and verification.",
+      "how_output_was_verified": "Checked against the supplied P08 statement and clarifications; 32 Vitest tests including all 25 published cases; ESLint; TypeScript; production build; local Worker and D1; desktop and 390px browser checks."
+    }
+  ],
+  "licenses_file": "LICENSES.md",
+  "declaration": "The information above is complete and truthful to the best of the team's knowledge, subject to the explicitly listed pre-submission roster check."
+}
