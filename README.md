@@ -125,8 +125,7 @@ See [LICENSES.md](LICENSES.md) for third-party material and AI disclosure.
 | Registered member | GitHub username | Major contribution | Evidence |
 |---|---|---|---|
 | Ammar Bin Mahmud | abmprottoy | Team lead; problem analysis, implementation direction, integration and verification | EVENT.md, application source, Git history |
-
-> Before final submission, the team leader must add every other registered member, if any, to this table and evaluation-manifest.json.
+| Md. Tahsin Hasib | tahsinhasib | Led the team's P02 solution, including the pharmacy workflow, dashboard and Cloudflare deployment | [P02 repository](https://github.com/abmprottoy/lsh26-t005-p02) |
 
 Commit count alone does not represent contribution.
 
@@ -145,7 +144,6 @@ OpenAI Codex assisted with specification extraction, implementation, tests, UI c
 
 ## Known limitations
 
-- The registered-member list must be checked against the official team roster before submission.
 - The printable individual marksheet bonus is not implemented.
 - Uploaded rows are validated and reported, but there is no in-app mark editor; users correct the JSON and upload again.
 

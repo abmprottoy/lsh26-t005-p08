@@ -42,6 +42,14 @@
         "src/worker",
         "src/client"
       ]
+    },
+    {
+      "registered_name": "Md. Tahsin Hasib",
+      "github_username": "tahsinhasib",
+      "major_contribution": "Led the team's P02 solution, including the pharmacy workflow, dashboard and Cloudflare deployment.",
+      "evidence_paths_or_commits": [
+        "https://github.com/abmprottoy/lsh26-t005-p02"
+      ]
     }
   ],
   "major_design_decisions": [
@@ -53,7 +61,6 @@
     "Use D1 only for reproducible source/result run snapshots rather than a normalized school CRUD model."
   ],
   "known_limitations": [
-    "The registered-member list must be checked against the official roster before submission.",
     "The printable individual marksheet bonus is not implemented.",
     "Invalid uploads are explained but corrected outside the application and uploaded again."
   ],
@@ -65,5 +72,5 @@
     }
   ],
   "licenses_file": "LICENSES.md",
-  "declaration": "The information above is complete and truthful to the best of the team's knowledge, subject to the explicitly listed pre-submission roster check."
+  "declaration": "The information above is complete and truthful to the best of the team's knowledge."
 }
